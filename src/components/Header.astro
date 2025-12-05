@@ -5,14 +5,10 @@ import HeaderLink from './HeaderLink.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">🩺 {SITE_TITLE}</a></h2>
+		<h2><a href="/">📊 {SITE_TITLE}</a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">홈</HeaderLink>
-			<HeaderLink href="/blog">블로그</HeaderLink>
-			<HeaderLink href="/about">소개</HeaderLink>
-		</div>
-		<div class="cta-button">
-			<a href="#" class="emergency-btn">🚑 응급 정보</a>
+			<HeaderLink href="/investment">투자 인사이트</HeaderLink>
 		</div>
 	</nav>
 </header>
@@ -45,31 +41,9 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	nav a.active {
 		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.cta-button {
-		display: flex;
-		align-items: center;
-	}
-	.emergency-btn {
-		padding: 0.5em 1em !important;
-		background: var(--danger);
-		color: white !important;
-		border-radius: 8px;
-		font-weight: 600;
-		font-size: 0.9em;
-		border-bottom: none !important;
-		transition: all 0.2s ease;
-	}
-	.emergency-btn:hover {
-		background: #dc2626;
-		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+		border-bottom-color: #1e3a5f;
 	}
 	@media (max-width: 720px) {
-		.cta-button {
-			display: none;
-		}
 		nav h2 {
 			font-size: 0.9em;
 		}

@@ -5,15 +5,15 @@
  */
 
 :root {
-	/* 목발 안전 가이드 테마 - 깔끔하고 신뢰감 있는 의료/헬스케어 컬러 */
-	--accent: #3b82f6; /* 밝은 블루 - 신뢰감 */
-	--accent-dark: #1e40af; /* 진한 블루 */
-	--accent-light: #60a5fa; /* 연한 블루 */
-	--success: #10b981; /* 그린 - 안전/건강 */
-	--warning: #f59e0b; /* 주황 - 주의 */
-	--danger: #ef4444; /* 빨강 - 응급 */
+	/* 투자 블로그 테마 - 전문적이고 신뢰감 있는 금융 컬러 */
+	--accent: #1e3a5f; /* 네이비 블루 - 금융/신뢰 */
+	--accent-dark: #0f2942; /* 진한 네이비 */
+	--accent-light: #2d5a7b; /* 연한 네이비 */
+	--success: #047857; /* 진한 그린 - 수익/성장 */
+	--warning: #d97706; /* 골드 - 주의/변동 */
+	--danger: #dc2626; /* 빨강 - 손실/위험 */
 	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
+	--gray: 75, 85, 99;
 	--gray-light: 243, 244, 246;
 	--gray-dark: 31, 41, 55;
 	--gray-gradient: rgba(var(--gray-light), 80%), #ffffff;
@@ -41,7 +41,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+	background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));

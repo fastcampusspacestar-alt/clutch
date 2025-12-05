@@ -3,7 +3,12 @@
     "allow": [
       "Bash(npm run dev:*)",
       "WebSearch",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git push:*)",
+      "Bash(git remote add:*)",
+      "WebFetch(domain:unsplash.com)"
     ],
     "deny": [],
     "ask": []
