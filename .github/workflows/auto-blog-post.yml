@@ -1,0 +1,51 @@
+name: Auto Generate Blog Post
+
+on:
+  schedule:
+    # 매일 00시 (UTC 15:00 = KST 00:00)
+    - cron: '0 15 * * *'
+    # 매일 08시 (UTC 23:00 = KST 08:00)
+    - cron: '0 23 * * *'
+    # 매일 16시 (UTC 7:00 = KST 16:00)
+    - cron: '0 7 * * *'
+  workflow_dispatch: # 수동 실행 가능
+
+jobs:
+  generate-blog-post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-blog-post.js
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add src/content/blog/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "자동 생성: 새로운 블로그 포스트 추가
+
+🤖 Generated with GitHub Actions
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+            git push
+          fi
